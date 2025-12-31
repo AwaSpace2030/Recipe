@@ -1,0 +1,42 @@
+/**nav bar*/
+* {
+  margin: 0;
+  padding: 0;
+}
+.nav-bar {
+  background-color: #ea2d2d;
+  min-height: 80px;
+  padding: 0px 30px;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  justify-content: space-between;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+.logo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.logo img {
+  width: 60px;
+}
+.logo h2 {
+  font-size: 20px;
+}
+
+.right-nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 0 8px;
+}

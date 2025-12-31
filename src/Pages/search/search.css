@@ -1,0 +1,36 @@
+.searchBar form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+}
+.searchBar form input {
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  padding: 8px;
+  width: 250px;
+  border: none;
+  position: relative;
+  padding-left: 12px;
+}
+.btn-search {
+  border-radius: 200px;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  width: 39px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0px;
+}

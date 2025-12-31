@@ -1,0 +1,23 @@
+/*recipe css*/
+.recipe-details {
+  padding: 40px 0;
+}
+.recipe-title {
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.recipe-info ul {
+  font-size: 14px;
+  color: rgb(61, 61, 61);
+  line-height: 160%;
+  margin: 0 0 0 30px;
+}
+.recipe-info p {
+  color: gray;
+}
+
+.recipe-info h4 {
+  padding-bottom: 8px;
+}

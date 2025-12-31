@@ -1,0 +1,61 @@
+.create {
+  max-width: 600px;
+  margin: 60px auto 0 auto;
+  padding: 40px;
+}
+
+.create form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgb(208, 208, 208);
+  padding: 20px 0;
+}
+
+.create label {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.create label input,
+.create label textarea {
+  border-radius: 40px;
+  padding: 8px 10px;
+  border: 1px solid rgb(192, 192, 192);
+  outline: none;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
+
+.create label textarea {
+  min-height: 80px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.success-message {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.success-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
