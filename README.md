@@ -76,7 +76,7 @@ npm start
 * 💾 Persist theme using Local Storage
 * ⭐ Favorite recipes feature
 * 🔐 Authentication system
-* ⚡ Performance optimization with caching
+
 
 ---
 
