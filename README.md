@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# 🍽️ Recipe App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🔗 **Live Demo:** [https://recipes-r.netlify.app/](https://recipes-r.netlify.app/)
 
-## Available Scripts
+A modern **Recipe Application** built with **React**, allowing users to search for recipes, view detailed recipe pages, and create new recipes. The app includes a fully functional **Dark / Light Mode**, smooth navigation, and a clean, responsive UI.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* 🔍 **Search Recipes** and display results as interactive cards
+* 📄 **Recipe Details Page** using dynamic routing
+* ➕ **Create New Recipes**
+* 🌗 **Dark Mode / Light Mode** with instant toggle
+* 🧭 **Client-side Routing** with React Router
+* ⚛️ **Global State Management** using React Context
+* 🧩 **Custom Hook (`useFetch`)** for data fetching with loading & error handling
+* ❌ **AbortController support** to cancel unnecessary requests
+* 📱 **Fully Responsive Design**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* **React**
+* **React Router DOM**
+* **Context API**
+* **Custom React Hooks**
+* **Fetch API**
+* **MockAPI** (Mock REST API for JSON data)
+* **CSS / Responsive Design**
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📂 Pages & Routes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* `/` – Home Page
+* `/search` – Search Recipes
+* `/results` – Search Results
+* `/recipe/:id` – Recipe Details
+* `/create` – Create a New Recipe
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🌗 Dark Mode Implementation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Theme state is managed using **React Context**
+* The class `dark-theme` is applied dynamically
+* The `<body>` element updates to reflect the active theme
+* Smooth and consistent theme switching across all pages
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🔁 Custom Hook: useFetch
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+A reusable custom hook for fetching data:
 
-## Learn More
+* Handles loading state (`isPending`)
+* Handles errors gracefully (`error`)
+* Cancels fetch requests on component unmount or URL change
+* Improves performance and user experience
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📦 Installation & Usage
 
-### Code Splitting
+```bash
+npm install
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## ✨ Future Improvements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* 💾 Persist theme using Local Storage
+* ⭐ Favorite recipes feature
+* 🔐 Authentication system
+* ⚡ Performance optimization with caching
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 👨‍💻 Author : Awadh Aldeabi :
+- This project was built as part of a **React learning journey**, focusing on real-world patterns, clean architecture, and best practices.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ 
