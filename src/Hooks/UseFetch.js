@@ -11,31 +11,26 @@ function useFetch(url, options = null) {
     setIsPending(true);
     setError(null);
 
-    const timer = setTimeout(() => {
-      fetch(url, { ...options, signal: controller.signal })
-        .then((res) => {
-          if (!res.ok) {
-            throw Error("Failed to fetch data");
-          }
-          return res.json();
-        })
-        .then((data) => {
-          setData(data);
+    fetch(url, { ...options, signal: controller.signal })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setData(data);
+        setIsPending(false);
+      })
+      .catch((err) => {
+        if (err.name !== "AbortError") {
+          setError(err.message);
           setIsPending(false);
-        })
-        .catch((err) => {
-          if (err.name !== "AbortError") {
-            setError(err.message);
-            setIsPending(false);
-          }
-        });
-    }, 200);
+        }
+      });
 
-    return () => {
-      clearTimeout(timer);
-      controller.abort();
-    };
-  }, []);
+    return () => controller.abort();
+  }, [url, options]);
 
   return { data, isPending, error };
 }

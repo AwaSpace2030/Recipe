@@ -1,0 +1,57 @@
+/* ========== Global Dark Theme ========== */
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* ========== Cards ========== */
+.dark-theme .card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #333;
+}
+
+.dark-theme .recipe-card {
+  background-color: #090910;
+}
+
+.dark-theme .recipe-card h2,
+.dark-theme .recipe-card h3 {
+  color: #ffffff;
+}
+
+.dark-theme .recipe-card h3 {
+  margin-bottom: 20px;
+}
+
+.dark-theme .recipe-card .sub-title {
+  color: #b3b3b3;
+}
+
+/* ========== Buttons & Nav ========== */
+.dark-theme .nav-bar,
+.dark-theme .btn-full-line {
+  background-color: #090910;
+}
+
+.dark-theme .recipe-card .btn-full-line,
+.dark-theme .recipe-info .btn-full-line,
+.dark-theme .create .btn-full-line,
+.dark-theme .wrapper .btn-full-line {
+  background-color: #ffffff;
+  color: #090910;
+}
+
+/* ========== Pagination ========== */
+.dark-theme .pagination button.active {
+  background-color: #090910;
+}
+
+/* ========== Recipe Info ========== */
+.dark-theme .recipe-info ul {
+  color: #cdcdcd;
+}
+
+.dark-theme .recipe-title {
+  border-bottom: 1px solid #606060; /* تصحيح الخطأ */
+}
