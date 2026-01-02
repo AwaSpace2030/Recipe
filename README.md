@@ -73,9 +73,10 @@ npm start
 
 ## ✨ Future Improvements
 
-* 💾 Persist theme using Local Storage
-* ⭐ Favorite recipes feature
-* 🔐 Authentication system
+- 💾 Persist theme using Local Storage
+- ⭐ Favorite recipes feature
+- 🔐 Authentication system
+- 🖼️ Upload recipe images using Firebase Storage
 
 
 ---
