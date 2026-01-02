@@ -7,16 +7,43 @@
 
 /* Small screens */
 @media (max-width: 600px) {
+  .container {
+    padding: 0 20px;
+  }
+  .Theme-Buttons {
+    justify-content: center !important;
+  }
   .recipe-card {
     flex: 0 0 100%; /* 1 card per row */
   }
-  .logo-text {
+  .logo img {
     display: none;
   }
 }
 
 /* Extra small screens (optional) */
 @media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px 0;
+    padding-bottom: 12px;
+  }
+  .right-nav {
+    flex-direction: column;
+    display: flex;
+    gap: 12px;
+    margin: 0 8px;
+    justify-content: normal;
+    width: 100%;
+    align-items: normal;
+  }
+  .searchBar form input {
+    width: 100%;
+  }
+  .right-nav .btn-out-line {
+    text-align: center;
+  }
   .recipe-card h2 {
     font-size: 18px; /* smaller title */
   }
@@ -33,10 +60,13 @@
 
   .cards-view {
     gap: 15px;
-    width: 90%;
   }
 
   .content-area {
     padding: 20px;
+  }
+
+  .wrapper {
+    padding: 0 15px;
   }
 }
