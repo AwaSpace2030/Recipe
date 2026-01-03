@@ -14,9 +14,7 @@ A modern **Recipe Application** built with **React**, allowing users to search f
 * 🌗 **Dark Mode / Light Mode** with instant toggle
 * 🧭 **Client-side Routing** with React Router
 * ⚛️ **Global State Management** using React Context
-* 🧩 **Custom Hook (`useFetch`)** for data fetching with loading & error handling
-* ❌ **AbortController support** to cancel unnecessary requests
-* 📱 **Fully Responsive Design**
+ * 📱 **Fully Responsive Design**
 
 ---
 
@@ -25,9 +23,6 @@ A modern **Recipe Application** built with **React**, allowing users to search f
 * **React**
 * **React Router DOM**
 * **Context API**
-* **Custom React Hooks**
-* **Fetch API**
-* **MockAPI** (Mock REST API for JSON data)
 * **CSS / Responsive Design**
 
 ---
@@ -51,10 +46,8 @@ A modern **Recipe Application** built with **React**, allowing users to search f
 
 ---
 
-## 🔁 Custom Hook: useFetch
-
-A reusable custom hook for fetching data:
-
+ 
+ 
 * Handles loading state (`isPending`)
 * Handles errors gracefully (`error`)
 * Cancels fetch requests on component unmount or URL change
