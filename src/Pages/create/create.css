@@ -1,7 +1,7 @@
 .create {
   max-width: 600px;
-  margin: 40px auto 0 auto;
-  padding: 40px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .create form {

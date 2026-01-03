@@ -1,37 +1,49 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./search.css";
 import { CiSearch } from "react-icons/ci";
-import useFetch from "../../Hooks/UseFetch";
 import { useNavigate } from "react-router-dom";
+import { db } from "../../Firebase/config";
 
 function Search() {
   const [term, setTerm] = useState("");
   const [isLoading, setIsLoading] = useState(false); // loading state
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const { data } = useFetch(
-    "https://6953ce22a319a928023cb79d.mockapi.io/api/recipes"
-  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!term) return;
 
-    if (!data) return;
+    setIsLoading(true);
+    setError(null);
 
-    setIsLoading(true); // start loading
+    // جلب البيانات من Firebase
+    db.collection("recipes")
+      .get()
+      .then((snapshot) => {
+        const data = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
 
-    const filtered = data.filter(
-      (recipe) =>
-        recipe.title.toLowerCase().includes(term.toLowerCase()) ||
-        recipe.ingredients?.some((ing) =>
-          ing.toLowerCase().includes(term.toLowerCase())
-        )
-    );
+        // فلترة النتائج
+        const filtered = data.filter(
+          (recipe) =>
+            recipe.title.toLowerCase().includes(term.toLowerCase()) ||
+            recipe.ingredient?.some((ing) =>
+              ing.toLowerCase().includes(term.toLowerCase())
+            )
+        );
 
-    // small timeout to simulate loading
-    setTimeout(() => {
-      setIsLoading(false); // stop loading
-      navigate("/results", { state: { results: filtered, searchTerm: term } });
-    }, 500);
+        setIsLoading(false);
+        navigate("/results", {
+          state: { results: filtered, searchTerm: term },
+        });
+      })
+      .catch((err) => {
+        setError("Failed to fetch recipes");
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -55,6 +67,8 @@ function Search() {
           <img src="./loading.gif" alt="loading" />
         </div>
       )}
+
+      {error && <p>{error}</p>}
     </div>
   );
 }

@@ -1,15 +1,32 @@
 import { Link, useParams } from "react-router-dom";
-import useFetch from "../../Hooks/UseFetch";
+import { useEffect, useState } from "react";
+import { db } from "../../Firebase/config";
 import "./recipe.css";
 
 function Recipe() {
   const { id } = useParams();
 
-  const {
-    data: recipe,
-    isPending,
-    error,
-  } = useFetch(`https://6953ce22a319a928023cb79d.mockapi.io/api/recipes/${id}`);
+  const [recipe, setRecipe] = useState(null);
+  const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    db.collection("recipes")
+      .doc(id)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          setRecipe(doc.data());
+        } else {
+          setError("Recipe not found");
+        }
+        setIsPending(false);
+      })
+      .catch(() => {
+        setError("Failed to load recipe");
+        setIsPending(false);
+      });
+  }, [id]);
 
   return (
     <div className="content-area">
@@ -19,6 +36,7 @@ function Recipe() {
             <img src="/loading.gif" alt="loading" />
           </div>
         )}
+
         {error && <p>{error}</p>}
 
         {recipe && (
@@ -28,27 +46,26 @@ function Recipe() {
             <div className="recipe-info">
               <h4>Ingredients</h4>
               <ul className="list-ing">
-                {Array.isArray(recipe.ingredients) &&
-                recipe.ingredients.length > 0 ? (
-                  recipe.ingredients.map((item, index) => (
+                {Array.isArray(recipe.ingredient) &&
+                recipe.ingredient.length > 0 ? (
+                  recipe.ingredient.map((item, index) => (
                     <li key={index}>{item}</li>
                   ))
                 ) : (
                   <li>No ingredients available</li>
                 )}
               </ul>
-
-              <br></br>
+              <br />
               <h4>Method</h4>
               <p className="method">{recipe.method}</p>
-              <br></br>
+              <br />
               <h4>Cooking Time:</h4>
-              {recipe.cookingTime}
-              <br></br>
-              <br></br>
-              <br></br>
+              {recipe.cookingTime} minutes
+              <br />
+              <br />
+              <br />
               <Link to="/" className="btn-full-line">
-                Explore Ohter Reicpes →
+                Explore Other Recipes →
               </Link>
             </div>
           </>

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "../Context/contextTheme";
-import { FiSun, FiMoon } from "react-icons/fi"; // أيقونات شمس وقمر
+import { FiSun, FiMoon } from "react-icons/fi";
 import "./Theme-Buttons.css";
 
 export function ThemeButtons() {

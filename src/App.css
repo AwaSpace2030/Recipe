@@ -40,6 +40,7 @@ body {
 /* Each card */
 .recipe-card {
   padding: 20px 30px;
+  position: relative;
   border: 1px solid rgb(177, 177, 177);
   box-sizing: border-box;
   text-align: left;
@@ -47,11 +48,19 @@ body {
   flex: 0 0 calc(33.33% - 20px);
   background: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -ms-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .recipe-card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
 }
 
 .recipe-card h2 {
@@ -79,6 +88,10 @@ body {
   font-size: 14px;
   display: inline-block;
   cursor: pointer;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
 }
 .btn-mode {
   width: 45px;
@@ -89,10 +102,10 @@ body {
   align-items: center;
   border: none;
   border-radius: 200px;
-  -webkit-border-radius: 200px;
-  -moz-border-radius: 200px;
-  -ms-border-radius: 200px;
-  -o-border-radius: 200px;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
   cursor: pointer;
 }
 
@@ -107,6 +120,10 @@ body {
   text-decoration: none;
   margin-bottom: 10px;
   display: inline-block;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
 }
 
 /* Loading */
@@ -125,6 +142,26 @@ body {
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
+}
+.btn-delete {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  display: flex;
+  padding: 8px 0;
+  text-decoration: underline;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+.btn-delete:hover {
+  color: #ea2d2d;
 }
 
 .loading img {
